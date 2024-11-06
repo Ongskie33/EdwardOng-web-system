@@ -123,7 +123,7 @@ button:hover {
 .search-container {
     position: absolute;
     top: 20px;
-    left: 460px;
+    left: 60%;
     transform: translateX(-50%);  
     z-index: 1001;  
     width: 40%;
