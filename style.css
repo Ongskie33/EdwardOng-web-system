@@ -135,11 +135,12 @@ button:hover {
 .search-container input {
     width: 100%;  
     padding: 10px 20px;
-    border: 2px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(1, 1, 1, 0.2);
     border-radius: 25px;
     outline: none;
     margin-left: 0;  
     font-size: 16px;
+    color: black;
 
 }
 
