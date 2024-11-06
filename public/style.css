@@ -1,0 +1,274 @@
+/* Global Styles */
+* {
+    font-family: "Outfit", sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(beauty.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+}
+
+/* Container Styles */
+.login-container {
+    width: 500px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(9px);
+    color: white;
+    border-radius: 14px;
+    padding: 30px 40px;
+}
+
+/* Heading styles */
+.login-container h1 {
+    font-size: 50px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* Form input and button styles */
+input,
+button {
+    width: 100%;
+    height: 60px;
+    margin: 5px 0;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.657);
+    border-radius: 60px;
+    font-size: 19px;
+    color: black;
+    text-indent: 23px;
+}
+
+input::placeholder {
+    text-indent: 20px;
+}
+
+button {
+    background-color: #02a12fd4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s ease ease-in-out;
+}
+
+button:hover {
+    background-color: hwb(137 4% 26% / 0.831);
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
+#map {
+    height: 100vh; 
+    width: 100%;
+    position: relative;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    transform: none; 
+    background-color: #fefefe;
+    padding: 20px; 
+    border: none;
+    width: 100%; 
+    height: 100%; 
+    border-radius: 0; 
+    z-index: 1001;
+    overflow: auto; 
+}
+
+.close {
+    color: #060000;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+}
+
+/* Search Box Styles */
+.search-container {
+    position: absolute;
+    top: 20px;
+    left: 30%;
+    transform: translateX(-50%);  
+    z-index: 1001;  
+    width: 80%;
+    max-width: 500px;
+    display: flex;  
+    gap: 20px;  
+}
+
+.search-container input {
+    width: 100%;  
+    padding: 10px 20px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    outline: none;
+    margin-left: 0;  
+    font-size: 16px;
+
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background-color: #02a12fd4;
+    color: white;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s ease ease-in-out;
+}
+
+/* Optional: Add hover effect for the button */
+.search-container button:hover {
+    background-color: #028a9d;
+    border-color: #028a9d;
+}
+
+
+.search-container button:hover {
+    background-color: #018c26;
+}
+
+#notifyButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#notifyButton:hover {
+    background-color: #218838;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+    #map {
+        height: 300px;
+    }
+}
+
+/* Notification Bell Styling */
+.notify-bell {
+    position: absolute;
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    font-size: 30px; /* Size of the bell */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1002; /* Ensure bell appears above map */
+    color: #333; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* White background for the bell */
+    border-radius: 50%; /* Circular background */
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for 3D effect */
+    transition: background-color 1.0s ease-in-out, box-shadow 2.4s ease-in-out;
+}
+
+.notify-bell:hover {
+    background-color: #f0f0f0; /* Slightly gray when hovered */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bigger shadow on hover */
+}
+
+/* Notification Badge (counter) */
+#notification-badge {
+    position: absolute;
+    top: -5px; /* Position slightly above the bell */
+    right: -5px; /* Position slightly to the right of the bell */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    z-index: 1003; /* Ensure the badge is above the bell */
+}
+
+/* Notifications Dropdown */
+.notifications {
+    position: absolute;
+    top: 80px; /* Space from the top of the page */
+    right: 20px; /* Align to the right of the page */
+    width: 300px; /* Width of the dropdown */
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    max-height: 400px; /* Max height for scrolling */
+    overflow-y: auto; /* Scroll if content overflows */
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1001; /* Ensure it stays below the bell */
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0s;
+
+    
+}
+
+.notifications.show{
+    visibility: visible;
+    opacity: 1;
+}
+
+.notifications ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.notifications li {
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.notifications li:last-child {
+    border-bottom: none;
+}
+
+.notifications li:hover {
+    background-color: #f9f9f9; /* Highlight on hover */
+}
+
+
