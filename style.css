@@ -239,8 +239,6 @@ button:hover {
     opacity: 0;
     z-index: 1001; /* Ensure it stays below the bell */
     transition: opacity 0.3s ease-in-out, visibility 0s linear 0s;
-
-    
 }
 
 .notifications.show{
@@ -266,5 +264,4 @@ button:hover {
 .notifications li:hover {
     background-color: #f9f9f9; /* Highlight on hover */
 }
-
 
